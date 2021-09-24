@@ -31,3 +31,4 @@ $RECYCLE.BIN/
 # Husky
 .husky
 .env
+.node_modules
