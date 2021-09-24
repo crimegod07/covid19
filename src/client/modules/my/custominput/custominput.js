@@ -1,5 +1,5 @@
 import { LightningElement, api } from "lwc";
-export default class Custominput extends LightningElement{
+export default class customInput extends LightningElement{
 
     @api name = 'field'
     @api type = 'text'
