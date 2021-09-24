@@ -1,5 +1,5 @@
 <template>
-    <div class="slds-form-element">
+    <div class="slds-form-element slds-p-vertical_medium">
         <label class="slds-form-element__label" for={uniqueId}>
         <template if:true={required}>
             <abbr class="slds-required" title="required">* </abbr>          
@@ -8,9 +8,8 @@
         <div class="slds-form-element__control">
         <input type={type} 
         name={name} 
-        id={uniqueId} 
-        placeholder="Placeholder text…" 
-        required={required} 
+        id={uniqueId}  
+         required={required} 
         class="slds-input" 
         onkeyup={inputHandler} />
         </div>
