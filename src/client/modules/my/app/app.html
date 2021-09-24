@@ -1,0 +1,52 @@
+<template>
+    <template if:true={loader}>
+        <my-spinner></my-spinner>
+   </template>
+    
+    <div class="slds-grid align-center slds-wrap slds-gutters slds-p-around_x-large">
+  <div class="slds-col slds-large-size_6-of-12
+              slds-medium-size_8-of-12
+              slds-size_12-of-12">
+
+              <article class="slds-card">
+                <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate slds-grid_align-center">
+                    <template if:false={isSubmitted}>
+                        <div class="slds-text-heading_large"> COVID-19 Safe Check-in Form</div>
+                    </template>
+                  <template if:true={isSubmitted}>
+                    <div class="slds-text-heading_large"> {checkinmsg}</div>
+                  </template>
+                </header>
+                </div>
+                <div class="slds-card__body slds-card__body_inner">
+                <p class="slds-text-body_small form-description">If you have cold or flu like symptoms, such as a cough, fever, sore throat, shortness of breath or runny nose, even if these are mild, you should tested for COVID-19 as soon as possible. People with mild symptoms can still spread the virus. To help stop the spread of COVID-19, anyone with cold can still spread the virus should get tested.</p>
+                <div class="slds-grid slds-grid_align-spread slds-p-top_large">
+                <img src="/resources/mask-women.jpeg" alt="Working mask-women"/>
+                <img src="/resources/mask-men.png" alt="Working men"/>
+                <img src="/resources/remote-women.jpeg" alt="Working"/>
+            </div>
+              
+            <template if:false={isSubmitted}>
+                <form onsubmit={checkingHandler}>
+                
+                    <my-custom-input type='text' name="Name" required label="Name" onformchange={formchange}></my-custom-input>
+                    <my-custom-input type='email' name="Email" required label="Email" onformchange={formchange}></my-custom-input>
+                    <my-custom-input type='number' name="Mobile" required label="Mobile" onformchange={formchange}></my-custom-input>
+    
+    
+                   <div class="slds-p-top_medium">
+                       <button type="submit" class="slds-card__footer-action slds-button slds-button  slds-button_brand margin-auto">
+                     Check-in
+                       </button>
+                    </div> 
+                </form>
+            </template>
+           
+            </div>
+            </article>
+             </div>
+  </div>
+   
+       
+</template>
